@@ -1,0 +1,28 @@
+#coding: utf8
+#!/usr/bin/env python
+
+import os
+
+mypid = str(os.getpid()).strip()
+p = [x for x in os.popen('ps -Ac').read().split('\n') if 'python' in x]
+
+for i in p:
+    [pid] = i.lstrip().split(' ')[0:1]
+    if mypid != pid:
+        os.system( 'kill ' + pid )
+    #print pid
+
+project_list = [
+                    {   # 医随访线上
+                        'projectname'   :   'website',       'status'        :   True
+                    },
+]
+for i  in project_list:
+    if i['status']:
+        os.chdir( i['projectname'] )
+        print 'starting ' + i['projectname']
+        os.system( './start.sh' )
+        os.chdir( '..' )
+    else:
+        print 'project: ' + i['projectname'] + ' skip'
+

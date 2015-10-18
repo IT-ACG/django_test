@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+	<div id="list">study</div>
+	{%for i in alist%}
+	{{i}}
+	{%endfor%}
+	{%for i in bdict%}
+	{{bdict.name}}
+	{%endfor%}
+	{%for key,value in bdict.items%}
+	{{key}}:{{value}}
+	{%endfor%}
+
+<!--	{%for num in nums%}
+	{{num}}{%if not forloop.last%},{%endif%} 
+	{%endfor%}
+	-->
+	<ul>
+	{%for x in xlist%}
+	 <li>{{x}}</li>
+	 {%empty%}
+	 <li>抱歉，列表为空</li>
+	{%endfor%}
+	</ul>
+	{%url 'add2' 4 5%}
+	<script type="text/javascript">
+		var list = {{jsonList|safe}}
+		console.log('fqcxxx')
+		console.log(list)
+		//将list放入div中
+		$('#list').prepend(list[0])		
+		$('#list').append(list[1])		
+		//for #1
+		for(i in list){
+		  console.log(i)
+		}
+		console.log('1st for')
+		//for #2
+		for(i in list){
+		  console.log(list[i])
+		}
+		console.log('2nd for')
+		//for #3
+		$.each(list,function(index,item){
+			console.log(index);
+			console.log(item);
+			}	
+			
+		);
+		console.log('3rd for')
+
+
+
+
+
+
+
+
+
+	
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	</script>
+</body>
+</html>
