@@ -15,7 +15,7 @@ DATABASES = {
 	'OPTIONS': {
 		        'autocommit': True,
 		},
-        'NAME': 'testdb',                      # Or path to database file if using sqlite3.
+        'NAME': 'test_db',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'postgres',
         'PASSWORD': 'jianan2013',
@@ -131,8 +131,11 @@ INSTALLED_APPS = (
       'learn',
       'people',
       'test_admin',
+      'django_crontab'
 )
-
+CRONJOBS = [
+    ('*/1 * * * *', 'calc.cron.testschedule'),
+]
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
