@@ -10,10 +10,16 @@
 	<div id="list">study</div>
 	{%for i in alist%}
 	{{i}}
-	{%endfor%}
-	{%for i in bdict%}
-	{{bdict.name}}
-	{%endfor%}
+	{%endfor%}<br>
+
+    {%for i in bdict.keys%}
+	{{i}}
+	{%endfor%}<br>
+
+	{%for i in bdict.values%}
+	{{i}}
+	{%endfor%}<br>
+
 	{%for key,value in bdict.items%}
 	{{key}}:{{value}}
 	{%endfor%}
@@ -35,8 +41,8 @@
 		console.log('fqcxxx')
 		console.log(list)
 		//将list放入div中
-		$('#list').prepend(list[0])		
-		$('#list').append(list[1])		
+		$('#list').prepend(list[0])
+		$('#list').append(list[1])
 		//for #1
 		for(i in list){
 		  console.log(i)
@@ -51,36 +57,14 @@
 		$.each(list,function(index,item){
 			console.log(index);
 			console.log(item);
-			}	
-			
+			}
+
 		);
 		console.log('3rd for')
 
 
-
-
-
-
-
-
-
-	
 	</script>
 </body>
 </html>
 
 
-
-
-
-
-
-
-
-
-
-
-	
-	</script>
-</body>
-</html>

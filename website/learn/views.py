@@ -16,3 +16,12 @@ def home(request):
     jsonList = json.dumps(jsonList)
     return render(request,'index.html',{'jsonList':jsonList,'nums':nums,'alist':alist,'bdict':bdict})
 
+
+def home2(request):
+    aList = ['mac','windows','linux']
+    bdict = {'name':'zhangsan','age':19}
+    nums = map(str,range(100))
+    jsonList = ['a','b']
+
+    return render(request,'index2.html',{'aList':aList,'bDict':bdict,'jsonList':jsonList,'nums':nums})
+
